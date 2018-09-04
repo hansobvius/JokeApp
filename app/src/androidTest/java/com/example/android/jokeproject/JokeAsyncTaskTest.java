@@ -35,10 +35,14 @@ public class JokeAsyncTaskTest {
                 @Override
                 public void onPostExecute(String s){
                     if(s == null){
-                        throw new AssertionError("The GMS endpoint response are null");
+                        throw new AssertionError("The GMS endpoint are null");
+                    }else if(s.equals("")){
+                        throw  new AssertionError("The GMS endpoint are empty");
+                    }else if(s.contains("connect timed out")){
+                        throw new AssertionError("No GMS backend response");
                     }else{
                         assertNotNull(s);
-                        assertTrue(s.length() > 0);
+                        assertTrue("Test passed", true);
                         mCountDownLatch.countDown();
                     }
                 }
