@@ -17,25 +17,15 @@ import javax.inject.Named;
                 packagePath = ""
         )
 )
+
 public class MyEndpoint {
-
-    /** A simple endpoint method that takes a name and says Hi back */
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
-        MyBean response = new MyBean();
-        response.setData(name);
-
-        return response;
-    }
-
+        
     @ApiMethod(name = "sayJoke")
     public MyBean sayJoke(){
         MyBean response = new MyBean();
         MyJokes myJokes = new MyJokes();
         String s = myJokes.getSomeJoke();
         response.setData(s);
-        //response.setData(null);
         return response;
     }
-
 }
