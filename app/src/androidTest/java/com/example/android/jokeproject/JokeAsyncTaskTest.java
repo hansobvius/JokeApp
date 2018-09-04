@@ -20,7 +20,6 @@ import static org.junit.Assert.assertTrue;
 public class JokeAsyncTaskTest {
 
     private String s = null;
-    private Exception mException = null;
     private CountDownLatch mCountDownLatch = null;
     Context mContext = InstrumentationRegistry.getTargetContext();
 
